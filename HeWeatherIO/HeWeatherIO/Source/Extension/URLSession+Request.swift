@@ -33,7 +33,6 @@ extension URLSession {
                 return
             }
 
-            print(String(data: data, encoding: String.Encoding.utf8))
             let decoder = JSONDecoder()
             if let value = try? decoder.decode(T.self, from: data) {
                 result = .success(value)
